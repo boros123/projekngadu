@@ -1,8 +1,13 @@
 <?php
 
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AduanController;
+use App\Models\Pengguna;
+
+
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Models\Ngaduan;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,31 +20,71 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
+//login logout regis
+Route::post('/regis',[AuthController::class,'register']);
 Route::post('/masuk',[AuthController::class,'masuk']);
 Route::post('/logout',[AuthController::class,'logout']);
-// user
+
+// masyarakat
 Route::group(['middleware' => ['auth:pengguna']],function(){
     Route::get('/user', function () {
-        return view('User.index');
+        return view ('index');
     });
 });
-// user
 
-Route::group(['middleware' => ['auth:user,petugas,pengguna']],function(){
-    
-});
-
-
-
-Route::get('/daftar', function () {
-    return view('register');
-});
-
-
+Route::post('/pengaduan', [AduanController::class,'store']);
 Route::get('/login',[AuthController::class,'login']);
-
+Route::get('/register',[AuthController::class,'daftar']);
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/about', function () {
+    return view('about');
+});
+// masyarakat
+
+// admin dan petugas
+Route::group(['middleware' => ['auth:user,petugas']],function(){
+    Route::get('/dashboard', function () {
+        return view('Dashboard.index',[
+            'title' => 'Dashboard',
+        ]);
+    });
+
+    Route::get('/laporan', function () {
+        return view('Dashboard.data',[
+            'title' => 'Data Laporan',
+            'pengaduans' => Ngaduan::paginate(4)
+        ]);
+    });
+
+    Route::get('/pengguna', function () {
+        return view('Dashboard.pengguna',[
+            'title' => 'Data Pengguna',
+            'penggunas' => Pengguna::paginate(4)
+        ]);
+    });
+
+    Route::get('/hasil-pengaduan', function () {
+        return view('Dashboard.hasil',[
+            'title' => 'Data hasil pengaduan',
+            'pengaduans' => Ngaduan::paginate(4)
+        ]);
+    });
+
+ 
+  
+    Route::get('/status{id}', [AduanController::class, 'edit']);
+    Route::post('/create-tanggap{id}', [AduanController::class,'update']);
+
+ 
+});
+// admin dan petugas
+
+Route::get('/cetak/{tglAwal}/{tglAkhir}', [AuthController::class, 'cetakPertanggal']);
+
+
+
+
+
+

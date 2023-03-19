@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         User::create([
             'name' => 'admin',
+            'username' => 'admin1',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('password'),
             'remember_token' => Str::random(10) ,
@@ -30,6 +31,7 @@ class DatabaseSeeder extends Seeder
 
         Petugas::create([
             'name' => 'petugas',
+            'username' => 'petugas1',
             'email' => 'petugas@gmail.com',
             'password' => Hash::make('password'),
             'remember_token' => Str::random(10) ,
@@ -37,14 +39,7 @@ class DatabaseSeeder extends Seeder
        
         ]);
 
-        Pengguna::create([
-            'name' => 'pengguna',
-            'email' => 'pengguna@gmail.com',
-            'password' => Hash::make('password'),
-            'remember_token' => Str::random(10) ,
-            
-       
-        ]);
+
 
 
     }

@@ -4,7 +4,13 @@
 <div class="page-content">
     <section class="row">
         <div class="col-12 col-lg-12">
-            <h1>ini admin</h1>
+            @if (Auth::guard('user')->check() )
+            <h1> SELAMAT DATANG ADMIN  </h1>
+            @elseif(Auth::guard('petugas')->check() )
+            <h1> SELAMAT DATANG PETUGAS  </h1>
+            @endif
+            
+            
             <div class="row">
                 <div class="col-6 col-lg-12 col-md-6">
                     <div class="card">

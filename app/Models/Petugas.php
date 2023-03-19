@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Ngaduan;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class Petugas extends Authenticatable
 {
@@ -18,6 +19,7 @@ class Petugas extends Authenticatable
      * @var array<int, string>
      */
     protected $guarded = ['id'];
+    protected $table = "petugas";
 
     /**
      * The attributes that should be hidden for serialization.
@@ -37,4 +39,9 @@ class Petugas extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function Ngaduan()
+    {
+        return $this->hasMany(Ngaduan::class);
+    }
 }

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
-class PenggunaController extends Controller
+use App\Models\Ngaduan;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class AduanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +26,7 @@ class PenggunaController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -34,7 +37,24 @@ class PenggunaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+        
+            "klasifikasi" => "required",
+            "laporan" => "required",
+            "pengguna_id" => "required",
+            "tglkejadian" => "required",
+            "status" => "",
+            "alamat" => "required",
+            "tanggapan" => "",
+            "lampiran" => "image|file|mimes:jpeg,png,jpg|max:20000",
+            
+        ]);
+        if ($request->file('lampiran')) {
+            $data['lampiran'] = $request->file('lampiran')->store('post-image');
+        }
+        Ngaduan::create($data);
+        return redirect('user');
+    
     }
 
     /**
@@ -56,7 +76,13 @@ class PenggunaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $record = Ngaduan::findorfail($id);
+        return view(
+            'Dashboard.status',['title' => 'Tanggapan'],
+            
+            compact('record')
+            );
+       
     }
 
     /**
@@ -68,7 +94,9 @@ class PenggunaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $record = Ngaduan::findorfail($id);
+        $record->update($request->all());
+        return redirect('/hasil-pengaduan');
     }
 
     /**

@@ -22,20 +22,17 @@
   </div>
 </div>
 <div class="container-fluid">
-  <div class="row">
+  <div class="row justify-content-center">
     <h4 class="text-center">Untuk apa sih Pengaduan Masyarakat online itu?</h4>
   </div>
 </div>
 <div class="container-fluid mt-5">
   <div class="row justify-content-center">
-    <div class="col-lg-3 ms-5">
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          Featured
-        </div>
-       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore odit, cupiditate quaerat voluptatum illum beatae modi officia saepe ea quas expedita ipsam, numquam explicabo iste, asperiores aspernatur fugiat distinctio nulla.</p>
-      </div>
-    </div>
+ 
+
+   
+
+   
 
     <div class="col-lg-3">
       <div class="card" style="width: 18rem;">
@@ -63,6 +60,7 @@
        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore odit, cupiditate quaerat voluptatum illum beatae modi officia saepe ea quas expedita ipsam, numquam explicabo iste, asperiores aspernatur fugiat distinctio nulla.</p>
       </div>
     </div>
+  
   </div>
 </div>
 

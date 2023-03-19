@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>{{$title}}</title>
     <link rel="stylesheet" href="{{ asset('icon/css/all.min.css') }}">
     <link rel="stylesheet" href="assets/css/main/app.css">
     <link rel="stylesheet" href="assets/css/main/app-dark.css">
     <link rel="icon" type="image" href="img/logo.png" />
+    <link rel="stylesheet" href="assets/extensions/simple-datatables/style.css">
+    <link rel="stylesheet" href="assets/css/pages/simple-datatables.css">
     
-<link rel="stylesheet" href="assets/css/shared/iconly.css">
+    <link rel="stylesheet" href="assets/css/shared/iconly.css">
 
 </head>
 
@@ -48,6 +50,8 @@
 <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
 <script src="assets/js/pages/dashboard.js"></script>
 <script src="{{ asset('bootstrap/css/bootstrap.min.js') }}"></script>
+<script src="assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+<script src="assets/js/pages/simple-datatables.js"></script>
 </body>
 
 </html>
