@@ -65,7 +65,7 @@
                         </a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="/pengguna" class='sidebar-link'>
+                        <a href="/petugas" class='sidebar-link'>
                             <i class="bi bi-grid-fill"></i>
                             <span>Data Petugas</span>
                         </a>
@@ -96,18 +96,25 @@
 
 
                 </ul>
-
-                <div class="menu float-bottom">
-                    <li class="sidebar-item ">
-
-                        <form action="/logout" class="sidebar-link" method="POST">
-                            @csrf
-
-                            <button type="submit" class="btn btn-primary">Logout</button>
-                        </form>
-
-                    </li>
-                </div>
+                <ul class="menu float-bottom">
+                 
+                    <form method="POST" action="/logout">
+                        @csrf
+    
+                       
+                        <li class="sidebar-item ">
+                        <li class="sidebar-link">
+                            <button class="btn" type="submit" onclick="return confirm('yakin untuk keluar?')">
+                                <i class="fa-solid fa-door-open"></i>
+                                <span class="fw-semibold">
+                                    Keluar
+                                </span>
+                            </button>
+                        </li>
+                        </li>
+                    </form>
+                </ul>
+               
 
             </div>
 
@@ -130,20 +137,34 @@
                             <span>Data Laporan</span>
                         </a>
                     </li>
+                    
+                    <li class="sidebar-item ">
+                        <a href="/hasil-pengaduan" class='sidebar-link'>
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Data Hasil Pengaduan</span>
+                        </a>
+                    </li>
 
                 </ul>
 
-                <div class="menu float-bottom">
-                    <li class="sidebar-item ">
-
-                        <form action="/logout" class="sidebar-link" method="POST">
-                            @csrf
-
-                            <button type="submit" class="btn btn-primary">Logout</button>
-                        </form>
-
-                    </li>
-                </div>
+                <ul class="menu float-bottom">
+                 
+                    <form method="POST" action="/logout">
+                        @csrf
+    
+                       
+                       
+                        <li class="sidebar-link">
+                            <button class="btn" type="submit" onclick="return confirm('yakin untuk keluar?')">
+                                <i class="fa-solid fa-door-open"></i>
+                                <span class="fw-semibold">
+                                    Keluar
+                                </span>
+                            </button>
+                        
+                        </li>
+                    </form>
+                </ul>
 
             </div>
 

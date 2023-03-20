@@ -1,6 +1,6 @@
 @extends('Layouts.Dashboard')
 @section('konten')
-<div class="text-end">
+<div class="">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
         data-bs-target="#example">

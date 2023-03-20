@@ -53,7 +53,7 @@ class AduanController extends Controller
             $data['lampiran'] = $request->file('lampiran')->store('post-image');
         }
         Ngaduan::create($data);
-        return redirect('user');
+        return redirect('user')->with('berhasil','Laporan berhasil di kirim');
     
     }
 

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Petugas;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class PetugasController extends Controller
 {
@@ -13,7 +17,10 @@ class PetugasController extends Controller
      */
     public function index()
     {
-        //
+        return view('Dashboard.daftarpetugas',[
+            'title' => 'Daftar petugas',
+          
+        ]);
     }
 
     /**
@@ -34,9 +41,23 @@ class PetugasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        $data = $request->validate([
+         'nama' => 'required',
+         'nik' => 'required|unique:penggunas',
+         'tlp' => 'required',
+         'kelamin' => 'required',
+         'username' => 'required|unique:penggunas',
+         'email' => 'required|unique:penggunas',
+         'password' => 'min:6|required',
+         'remember_token' => Str::random(10),
+        ]);
+     
+        $data['password'] = Hash::make($data['password']);
+        Petugas::create($data);
+        return redirect('dashboard');
     }
-
+    
     /**
      * Display the specified resource.
      *

@@ -2,12 +2,12 @@
 
 use App\Http\Controllers\AduanController;
 use App\Models\Pengguna;
-
-
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PetugasController;
 use App\Models\Ngaduan;
+use App\Models\Petugas;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +24,8 @@ use App\Models\Ngaduan;
 Route::post('/regis',[AuthController::class,'register']);
 Route::post('/masuk',[AuthController::class,'masuk']);
 Route::post('/logout',[AuthController::class,'logout']);
+Route::get('/daftar',[PetugasController::class,'index']);
+Route::post('/petugas-daftar',[PetugasController::class,'store']);
 
 // masyarakat
 Route::group(['middleware' => ['auth:pengguna']],function(){
@@ -65,15 +67,21 @@ Route::group(['middleware' => ['auth:user,petugas']],function(){
         ]);
     });
 
+    Route::get('/petugas', function () {
+        return view('Dashboard.petugas',[
+            'title' => 'Data Petugas',
+            'petugas' => Petugas::all()
+        ]);
+    });
+
     Route::get('/hasil-pengaduan', function () {
         return view('Dashboard.hasil',[
             'title' => 'Data hasil pengaduan',
-            'pengaduans' => Ngaduan::paginate(4)
+            'pengaduans' => Ngaduan::all()
         ]);
     });
 
  
-  
     Route::get('/status{id}', [AduanController::class, 'edit']);
     Route::post('/create-tanggap{id}', [AduanController::class,'update']);
 

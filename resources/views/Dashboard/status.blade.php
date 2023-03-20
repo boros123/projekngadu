@@ -1,15 +1,9 @@
 @extends('Layouts.Dashboard')
 @section('konten')
-<div id="main">
-    <header class="mb-3">
-        <a href="#" class="burger-btn d-block d-xl-none">
-            <i class="bi bi-justify fs-3"></i>
-        </a>
-    </header>
 
-    <div class="page-heading">
-        <h3>Data Tanggapan</h3>
-    </div>
+  
+
+    
     <div class="page-content">
         <div class="bg-white px-3 py-5 shadow col-lg-10 mx-auto">
             <h5 class="container mb-3">Berikan Tanggapan</h5>
@@ -44,10 +38,7 @@
                 </div>
             </section>
         </div>
-    </div>
-    <footer class="">
 
-    </footer>
-</div>
-</div>
+  
+
 @endsection

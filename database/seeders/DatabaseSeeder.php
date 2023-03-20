@@ -29,15 +29,15 @@ class DatabaseSeeder extends Seeder
        
         ]);
 
-        Petugas::create([
-            'name' => 'petugas',
-            'username' => 'petugas1',
-            'email' => 'petugas@gmail.com',
-            'password' => Hash::make('password'),
-            'remember_token' => Str::random(10) ,
+        // Petugas::create([
+        //     'name' => 'petugas',
+        //     'username' => 'petugas1',
+        //     'email' => 'petugas@gmail.com',
+        //     'password' => Hash::make('password'),
+        //     'remember_token' => Str::random(10) ,
             
        
-        ]);
+        // ]);
 
 
 

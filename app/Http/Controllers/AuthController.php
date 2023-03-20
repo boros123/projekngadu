@@ -56,7 +56,10 @@ class AuthController extends Controller
 
         return redirect()->intended('/user');
     }
-     return back()->with('loginerror','Gagal Masuk Mungkin Password Atau Username Anda Salah');
+    else{
+        return back()->with('loginerror','Gagal Masuk Mungkin Password Atau Username Anda Salah');
+    }
+    
 
    
    }
@@ -116,7 +119,9 @@ class AuthController extends Controller
         return redirect('/');
          
     }
-    return back('user'); 
+    else {
+        
+    }
 
    }
 
