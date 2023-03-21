@@ -85,7 +85,7 @@ style="background-color: #e8e8e8">
                 </div>
             </div>
             <div class="d-flex justify-content-center">
-                <button type="submit"
+                <button type="submit" onclick="return confirm('Data petugas sudah benar?')"
                     class="btn btn-primary mx-1 col-lg-2 col-md-4 col-sm-4 col-4 shadow ">Kirim</button>
              
             </div>

@@ -19,9 +19,9 @@ class CreatePengaduansTable extends Migration
             $table->foreignId('petugas_id')->nullable();
             $table->foreignId('user_id')->nullable();
             $table->string('klasifikasi');
-            $table->string('laporan');
+            $table->text('laporan');
             $table->date('tglkejadian');
-            $table->string('alamat');
+            $table->text('alamat');
             $table->string('status');
             $table->string('lampiran')->nullable();
             $table->string('tanggapan')->nullable();

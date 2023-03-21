@@ -16,28 +16,14 @@
                     <a class="nav-link " href="/about" style="color:#000000; font-size: 20px">About</a>
                 </li>
             </ul>
-            @if ( !Auth::guard('petugas')->check() && !Auth::guard('pengguna')->check())
+            @if (!Auth::guard('pengguna')->check())
                 <div class=" col-lg-3 text-end float-end">
                     <a href="/register"><button type="button" class="btn btn-dark"><i class="fa-solid fa-user-group"></i>
                             Daftar</button></a>
                     <a href="/login"><button type="button" class="btn btn-secondary"><i
                                 class="fa-solid fa-right-to-bracket"></i> Login</button></a>
                 </div>
-            @elseif (Auth::guard('user')->check())
-            <div class=" col-lg-3 text-end float-end">
-                <form action="/logout" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-primary">Logout</button>
-                </form>
-            </div>
-               
-            @elseif (Auth::guard('petugas')->check())
-            <div class=" col-lg-3 text-end float-end">
-                <form action="/logout" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-primary">Logout</button>
-                </form>
-            </div>
+           
               
             @elseif (Auth::guard('pengguna')->check())
             

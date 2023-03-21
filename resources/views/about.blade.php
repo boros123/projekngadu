@@ -34,32 +34,39 @@
 
    
 
-    <div class="col-lg-3">
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          Featured
-        </div>
-       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore odit, cupiditate quaerat voluptatum illum beatae modi officia saepe ea quas expedita ipsam, numquam explicabo iste, asperiores aspernatur fugiat distinctio nulla.</p>
+    <div class="container-fluid pt-5 pb-5" style="background-color:#8BFBBE;">
+      <div class="container mb-4">
+          <div class="row">
+              <h6 class="text-center" style="font-size: 20px;color:#FFFFFF;">Apa saja sih yang membedakan kami dengan website lain ?</h6>
+          </div>
       </div>
-    </div>
-
-    <div class="col-lg-3">
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          Featured
-        </div>
-       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore odit, cupiditate quaerat voluptatum illum beatae modi officia saepe ea quas expedita ipsam, numquam explicabo iste, asperiores aspernatur fugiat distinctio nulla.</p>
+      <div class="row justify-content-evenly">
+          <div class="col-lg-4">
+              <div class="panel mx-auto shadow-sm p-4 rounded" style="background-color:#f9f9f9;">
+                  <p>1</p>
+              <div class="border-top"></div>
+                  <p>Design aplikasi yang sangat simple dengan tampilan menu yang mudah dioperasikan oleh pemula sekalipun
+                       sehinga dapat memudahkan penggunaan aplikasi pengaduan ini</p>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="panel mx-auto shadow-sm p-4 rounded" style="background-color:#f9f9f9; ">
+                  <p>2</p>
+                  <div class="border-top"></div>
+                      <p>Aplikasi dibuat secara bertahap satu persatu, sehingga dapat disesuaikan dengan
+                           kemampuan karyawan untuk mengoperasikan aplikasi secara bertahap juga</p>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="panel mx-auto shadow-sm p-4 rounded" style="background-color:#f9f9f9; ">
+                  <p>3</p>
+                  <div class="border-top"></div>
+                      <p>Aplikasi menggunakan database standar Internasional yang banyak digunakan aplikasi
+                           lain sehingga memudahkan integrasi dengan vendor lain</p>
+              </div>
+          </div>
       </div>
-    </div>
-
-    <div class="col-lg-3">
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          Featured
-        </div>
-       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore odit, cupiditate quaerat voluptatum illum beatae modi officia saepe ea quas expedita ipsam, numquam explicabo iste, asperiores aspernatur fugiat distinctio nulla.</p>
-      </div>
-    </div>
+  </div>
   
   </div>
 </div>

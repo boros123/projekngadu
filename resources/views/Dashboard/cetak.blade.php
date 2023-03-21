@@ -13,7 +13,6 @@
     <link rel="icon" type="image" href="img/logo.png" />
     <link rel="stylesheet" href="assets/extensions/simple-datatables/style.css">
     <link rel="stylesheet" href="assets/css/pages/simple-datatables.css">
-    
     <link rel="stylesheet" href="assets/css/shared/iconly.css">
 
 </head>
@@ -38,14 +37,11 @@
                 @if ($pengaduan->tanggapan)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $pengaduan->created_at }}</td>
                         <td>{{ $pengaduan->pengguna->nama }}</td>
                         <td>{{ $pengaduan->klasifikasi}}</td>
                         <td>{{ $pengaduan->laporan }}</td>
                         <td>{{ $pengaduan->alamat }}</td>
-                        <td>{{ $pengaduan->tglkejadian }}</td>
-
-
+                        <td>{{ $pengaduan->created_at }}</td>
                         @if ($pengaduan->status == 'Belum Selesai')
                             <td class="text-primary">{{ $pengaduan->status }}</td>
                         @elseif ($pengaduan->status == 'Ditolak')
